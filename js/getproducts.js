@@ -121,7 +121,7 @@
           `
           usernameID.innerHTML = `${username} `
          document.getElementById("scheduleID").addEventListener('click', function(){
-            if(!snapshot.val().ABONNEMENT){
+            if(snapshot.val().ABONNEMENT){
                 window.location.href = "./rdv/rdv.html"
                 var valPassschedule = "MDlEKNDCKKH2345kfgEE" 
                 localStorage.setItem("passIdschedule", valPassschedule)
@@ -256,7 +256,7 @@
                 text: `Vous avez aimé ${productName}`,
                 icon: "success",
                 closeOnClickOutside: false,
-            })
+        })
         }
         // Sélectionnez l'élément d'entrée de recherche par son ID
         var searchInput = document.getElementById('orderby1');

@@ -3368,9 +3368,9 @@ iframe {border: none;}
 }
 
 .zmdi-account{
-  font-size: 35px !important;
-  padding-left: 8px !important;
-  padding-right: 8Px !important;
+  font-size: 25px !important;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
   color: white !important;
 }
 /* ------------------------------------ */
@@ -3891,7 +3891,26 @@ iframe {border: none;}
     animation: pulse 2s infinite;
     text-decoration: none;
   }
-  
+  .zmdi-accountID{
+    cursor: pointer;
+    background: rgb(244, 72, 66) !important;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    height: auto;
+    width: auto;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 50em;
+    font-size: 1.25em;
+    transition: all 0.1s ease-in-out;
+    animation: pulse 2s infinite;
+    text-decoration: none;  
+  }
+  .zmdi-accountID:hover{
+    background: #ff4c4c;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    transform: scale(1.025);  
+  }
   .custom-button:hover {
     background: #ff4c4c;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.5);

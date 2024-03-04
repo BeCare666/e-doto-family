@@ -3930,3 +3930,11 @@ iframe {border: none;}
       box-shadow: 0 0 0 10px rgba(244, 72, 66, 0);
     }
   }
+
+#infodetailsId p strong {
+  color: #3498db !important;
+}
+
+#mtextId {
+  color: #3498db !important;
+}

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>infos</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+<link rel="icon" type="image/png" href="https://gerardsodinyessi.github.io/edoto-family/assets/img/logonavigator.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/utilx.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/loader.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="your-integrity-code" crossorigin="anonymous" />
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+<!--===============================================================================================-->
+</head>
+<body class="animsitionx">
+	<!-- Title page -->
+	<section id="headerInfoID" style="padding: 0 !important;">
+   </section>	
+	<!-- Content page -->
+	<section class="bg0 p-t-75 p-b-120">
+		<div class="container">
+			<div class="row p-b-148" style="display: none;">
+				<div class="col-md-7 col-lg-8" >
+					<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
+						<h3 class="mtext-111 cl2 p-b-16">
+							Notre histoire
+						</h3>
+
+						<p class="stext-113 cl6 p-b-26">
+							e-Académie est une entreprise web novatrice spécialisée dans l'éducation en ligne. 
+							Notre mission est de rendre l'apprentissage accessible à tous, 
+							partout dans le monde, en offrant des cours de haute qualité dans divers domaines. 
+
+							
+						</p>
+
+						<p class="stext-113 cl6 p-b-26">
+							Que vous soyez un professionnel cherchant à acquérir de nouvelles compétences, un étudiant 
+							en quête de connaissances supplémentaires, ou une entreprise désireuse de former son personnel, e-Académie est là pour vous accompagner dans votre parcours d'apprentissage.
+
+
+						</p>
+ 
+					</div>
+				</div>
+
+				<div class="col-11 col-md-5 col-lg-4 m-lr-auto">
+					<div class="how-bor1 ">
+						<div class="hov-img0" >
+							<img src="images/gallery-05.jpg" alt="IMG">
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="order-md-2 col-md-7 col-lg-8 p-b-30">
+					<div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md">
+						<h3 class="mtext-111 cl2 p-b-16" id="mtextId">
+							
+						</h3>
+
+						<p class="stext-113 cl6 p-b-26" style="display: none;">
+							Accessibilité : Nous croyons en l'éducation pour tous. C'est pourquoi nous offrons une variété de cours accessibles financièrement et adaptés à différents niveaux de compétence.
+						</p>
+
+						<div class="bor16 p-l-29 p-b-9 m-t-22">
+							<div class="stext-114 cl6 p-r-40 p-b-11" id="infodetailsId">
+								
+							</div>
+
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="order-md-1 col-11 col-md-5 col-lg-4 m-lr-auto p-b-30">
+					<div class="how-bor2">
+						<div class="hov-img0" id="hov-img0Id">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>	
+	
+		
+	<button class="custom-button" id="scheduleID"><i class="fas fa-calendar-alt"></i><span class="schedule-text">Schedule</span></button>
+	<!-- Footer -->
+	<footer class="bg3 p-t-75 p-b-32" style="background-color: rgb(8, 8, 116); display: none;">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Logo
+					</h4>
+
+					<ul>
+						
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								<img src="images/mylogo.png" alt="" style="width: 40vh; height: 29vh;">
+							</a>
+						</li>
+
+						
+						</li>
+					</ul>
+				</div>
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Les liens utils
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="index.html" class="stext-107 cl7 hov-cl1 trans-04">
+								Accueil
+
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="product.html" class="stext-107 cl7 hov-cl1 trans-04">
+								Les formations
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="about.html" class="stext-107 cl7 hov-cl1 trans-04">
+								À propos
+
+							</a>
+						</li>
+						<!----
+						<li class="p-b-10">
+							<a href="faq.html" class="stext-107 cl7 hov-cl1 trans-04">
+								F.A.Q
+
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="politique.html" class="stext-107 cl7 hov-cl1 trans-04 cacheIdClass">
+								Politique
+
+							</a>
+						</li>
+					-->
+						<li class="p-b-10">
+							<a href="contact.html" class="stext-107 cl7 hov-cl1 trans-04">
+								Contact
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						ENTREZ EN CONTACT
+					</h4>
+
+					<p class="stext-107 cl7 size-201">
+						E-commerce Académie est votre partenaire privilégié pour l'apprentissage numérique, 
+						offrant une gamme complète de services de formation dans des domaines cruciaux 
+						pour le monde moderne des affaires.
+					</p>
+
+					<div class="p-t-27">
+						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-facebook"></i>
+						</a>
+
+						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-instagram"></i>
+						</a>
+
+						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-whatsapp"></i>
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Newsletter
+					</h4>
+					<p class="stext-107 cl7 size-201">
+					Rejoignez E-commerce Académie, où l'apprentissage rencontre l'avenir !
+					Nous vous remercions pour votre confiance.
+					</p>
+					<form>
+						<div class="wrap-input1 w-full p-b-4">
+							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
+							<div class="focus-input1 trans-04"></div>
+						</div>
+
+						<div class="p-t-18">
+							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+								Subscribe
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="p-t-40">
+				<div class="flex-c-m flex-w p-b-18">
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
+					</a>
+				</div>
+
+				<p class="stext-107 cl6 txt-center">
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="" target="_blank">E-commerce Académie</a> &amp; distributed by <a href="" target="_blank">E-commerce Académie</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+				</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
+    <section id="sameToBody">
+        <div class="multi-ripple ">
+          <div></div>
+          <div></div>
+        </div>
+    </section>
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			$(this).css('position','relative');
+			$(this).css('overflow','hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed: 1,
+				scrollingThreshold: 1000,
+				wheelPropagation: false,
+			});
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="js/maininfo.js"></script>
+	
+</body>
+</html>

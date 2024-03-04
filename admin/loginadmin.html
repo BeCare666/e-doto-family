@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="loginadmin.css">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="./../images/logo_autopartspro.png" rel="icon">
+    <link href="./../assets/img/dyscom.png" rel="icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.3/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+</head>
+<body>
+    <div class="login-page" id="login-page">
+        <div class="form">
+          <form class="register-form">
+            <input type="text" placeholder="name"/>
+            <input type="password" placeholder="password"/>
+            <input type="text" placeholder="email address"/>
+            <button>create</button>
+            <p class="message">Already registered? <a href="#">Sign In</a></p>
+          </form>
+          <form class="login-form" id="23444" action="javascript:submitmy()">
+            <input type="email" placeholder="email"   id="email" required/>
+            <input type="password" placeholder="password"   id="password" required/>
+            <br><br>
+             <button type="submit" class="btn btn-primary">Connecter</button>
+            <p class="message" style="display: none; ">Not registered? <a href="#">Create an account</a></p>
+          </form>
+        </div>
+      </div>
+      <div id="preloader" style="display: none;"></div>
+      <script src="loginadmin.js"></script>
+
+      <script>
+            function insertData(e) {
+      const idproduct = id()
+      if (Name.value && Email.value && Subject.value && Message.value) {
+ 
+      }
+
+
+      // return false;
+      e.preventDefault();
+    }
+      </script>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.3/dist/sweetalert2.all.min.js"></script>
+</body>
+</html>

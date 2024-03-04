@@ -250,13 +250,13 @@ h6 span{
    top: 30vh;
 }
 @media only screen and (max-width: 600px) {
-  /* Ajoutez vos styles CSS pour les appareils mobiles ici */
+  /* Ajoutez vos styles CSS pour les appareils mobiles ici 
   .forgetpassword{
     position: absolute;
     right: 1px;
     top: 40vh;
  }
-
+*/
  .fntAQ {
   font-size:  9px !important;
 }

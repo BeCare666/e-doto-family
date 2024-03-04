@@ -110,7 +110,8 @@
                    // var myCatory = productData.Category
 
                    headerInfoID.innerHTML = `
-                   <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('${photoDataUrl}');">
+                   <section class="" style="margin: top 0!important; padding: 0 !important;">
+                   <img src="${photoDataUrl}" alt="" style="height: 100vh !important; width: 100% !important;">
                    <h2 class="ltext-105 cl0 txt-center">
                   <!-- ${snapshot.val().Category}-->
                    </h2>

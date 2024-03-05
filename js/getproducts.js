@@ -156,7 +156,7 @@
                         <!-- Block2 -->
                         <div class="block2" style="background-color: #33333309 !important;  padding: 1vh;">
                             <div class="block2-pic hov-img0" >
-                                <img src="${photoDataUrl}" alt="IMG-PRODUCT"  style="height: 50vh !important; width: 100% !important;">
+                                <img src="${photoDataUrl}" alt="IMG-PRODUCT"  style="height: 42vh !important; width: 100% !important;">
                                 <a href="info_details.html?id=${productData.Idproduct}" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                  Details  
                                 </a>
@@ -202,7 +202,7 @@
                         <!-- Block2 -->
                         <div class="block2" style="background-color: #33333309 !important;  padding: 1vh;">
                             <div class="block2-pic hov-img0" >
-                                <img src="${photoDataUrl}" alt="IMG-PRODUCT"  style="height: 50vh !important; width: 100% !important;">
+                                <img src="${photoDataUrl}" alt="IMG-PRODUCT"  style="height: 42vh !important; width: 100% !important;">
                                 <a href="info_details.html?id=${productData.Idproduct}" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                  Details  
                                 </a>

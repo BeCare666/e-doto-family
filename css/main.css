@@ -1914,12 +1914,12 @@ button.mfp-close {
 
 /*---------------------------------------------*/
 .filter-link {
-  color: #aaa;
+  color: #000080;
   border-bottom: 1px solid transparent;
 }
 
 .filter-link:hover {
-  color: #051c5a;
+  color: #aaa;
   border-bottom: 1px solid #051c5a;
 }
 
@@ -1933,8 +1933,26 @@ button.mfp-close {
   .filter-col2,
   .filter-col3,
   .filter-col4 {width: 50%;}
-}
+  .wrap-header-mobile{
+    position: fixed !important; 
+    top: 0 !important;  
+    z-index: 1000 !important; 
+    width: 100% !important;
+  }
 
+  #santeId{
+    height: 50vh !important; width: 100% !important
+  }
+}
+#headId{
+  position: fixed ; 
+  top: 0;  
+  z-index: 1000; 
+  width: 100% ;
+}
+#santeId{
+  height: 65vh !important; width: 100% !important
+}
 @media (max-width: 575px) {
   .filter-col1,
   .filter-col2,

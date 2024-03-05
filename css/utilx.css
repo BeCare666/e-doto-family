@@ -3367,12 +3367,7 @@ iframe {border: none;}
 	justify-content: space-between;
 }
 
-.zmdi-account{
-  font-size: 25px !important;
-  padding-left: 5px !important;
-  padding-right: 5px !important;
-  color: white !important;
-}
+ 
 /* ------------------------------------ */
 .flex-t {
 	-ms-align-items: flex-start;
@@ -3874,7 +3869,7 @@ iframe {border: none;}
 
   .custom-button{
     position: fixed;
-    bottom: 35px;
+    bottom: 20px;
     right: 20px;
     cursor: pointer;
     background: rgb(244, 72, 66);
@@ -3938,3 +3933,7 @@ iframe {border: none;}
 #mtextId {
   color: #3498db !important;
 }
+#user-button{
+  right: 0 !important;
+  margin-right: 9px !important;
+  }

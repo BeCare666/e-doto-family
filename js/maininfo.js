@@ -111,7 +111,7 @@
 
                    headerInfoID.innerHTML = `
                    <section class="" style="margin: top 0!important; padding: 0 !important;  min-height:0 !important;">
-                   <img src="${photoDataUrl}" alt="" style="height: 65vh !important; width: 100% !important;">
+                   <img src="${photoDataUrl}" alt="">
                    <h2 class="ltext-105 cl0 txt-center">
                   <!-- ${snapshot.val().Category}-->
                    </h2>
@@ -122,7 +122,6 @@
 
                    infodetailsId.innerHTML = `${snapshot.val().Genboxtextarea}`
             });
-
 
             var useremail = snapshot.val().email;
             var username = snapshot.val().username;

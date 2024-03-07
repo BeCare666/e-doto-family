@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Product</title>
+	<title>Profil</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
  
@@ -36,6 +36,11 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/loader.css">
 <!--===============================================================================================-->
+<style>
+	#userABID{
+		font-size: 12px !important;
+	}
+</style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="your-integrity-code" crossorigin="anonymous" />
 <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
@@ -63,21 +68,22 @@
 					</a>
 					<!-- Icon header -->
 					<div class="wrap-icon-header flex-w flex-r-m">
-						<div  class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-cart">
+						<div  class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 js-show-cart">
 							<button class="image-button btn-my-color circle-image " id="user-button" 
 							style="display: flex;  border-radius: 100%; justify-content: center;
 							align-items: center;
 							width: 8vh;
+							margin-right:0 !important;
 							height: 8vh;
 							border-radius: 100%;
 							overflow: hidden;
-							background-color: #FFB6C1;
+							background: rgb(214, 62, 57);
 							color: white; 
 							transition: background-color 0.5s ease;">
 							<i class="zmdi zmdi-account" style="font-size: 20px;
-							color: #000080;"></i>
+							color: white;"></i>
 							</button>
-						  </header><!-- End Header -->
+						  </header><!-- End Header color: #000080;-->
 							<!--<button class="btn zmdi-accountID" style="border-radius: 100%;"><i class="zmdi zmdi-account"></i></button>-->
 						</div>
 
@@ -93,33 +99,36 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
+				<a href="index.html" style="display: flex; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
 				<div id="logo" style="display: flex; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
 					<img src="https://gerardsodinyessi.github.io/edoto-family/assets/img/logonavigator.png" alt="" 
 					style="border-radius: 5px; max-height: 65px;"> 
 					<span style="font-size: 20px;
 					color: #000080;"><span style="opacity: 0 !important;">sdff</span> e-doto family</span>
 				</div>
+			</a>
 			</div>
 
 			<!-- Icon header -->
-			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+			<div class="wrap-icon-header flex-w flex-r-m m-r-15" >
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search" style="padding: right 0 !important;">
 					<i class="zmdi zmdi-search"></i>
 				</div>
 
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 js-show-cart">
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-10 js-show-cart">
 					<button class="image-button btn-my-color circle-image " id="user-button" 
 					style="display: flex;  border-radius: 100%; justify-content: center;
 					align-items: center;
+					margin-right:0 !important;
 					width: 8vh;
 					height: 8vh;
 					border-radius: 100%;
 					overflow: hidden;
-					background-color: #FFB6C1;
-					color: white; 
+					background: rgb(214, 62, 57);
+					color: white;  
 					transition: background-color 0.5s ease;">
 					<i class="zmdi zmdi-account" style="font-size: 20px;
-					color: #000080;"></i>
+					color: white;"></i>
 					</button>
 				</div>
 
@@ -214,8 +223,8 @@
 						<div class="row cf">
 						  <div id="card2" class="card four col">
 							<div class="header"></div>
-							<div class="wrapper" style="height: 80vh; overflow: auto;">
-							  <div class="image-wrapper"><img src="https://static.pexels.com/photos/7097/people-coffee-tea-meeting.jpg" alt=""></div>
+							<div class="wrapper" style="height: 76vh; overflow: auto;">
+							  <div class="image-wrapper"><img src="images/I-6_Older-adolescents_v2.png" alt=""></div>
 							  <h3 class="name" id="usernameID"></h3>
 							  <h6 class="name" id="SoldeId" style="text-align: center !important; margin-top: 7px;"></h6>
 							  <div class="social cf" style="display: none;">
@@ -267,18 +276,18 @@
 				<div style="opacity: 0;">tdipiîtjhegit</div>
 				  <img src="images/sante.jpg" alt="" id="santeId">
 					<h2 class="ltext-105 cl0 txt-center"></h2>
-					<h3 style="text-align: center; font-size: 20px; color: #000080; margin-top: 15px;">La santé sexuelle et reproductive.</h3><br><br>
+					<h3 style="text-align: center; font-size: 20px; color: #000080; margin-top: 15px;">La santé sexuelle et reproductive ?</h3><br><br>
 					<div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
 						<div class="filter-col1 p-r-15 p-b-27">
 							<ul> 
 								<li class="p-b-6">
 									<a href="profil.html?category=La-puberté" class="filter-link stext-106 trans-04">
-										<i class="zmdi zmdi-check-circle" style="font-size: 18px; color: green;"></i> <strong style="color: #CC276A;"> 1</strong> -La puberté
+										<i class="zmdi zmdi-check-circle" style="font-size: 18px; color: green;"></i> <strong style="color: #CC276A;"> 1</strong> -La puberté ?
 									</a>
 								</li> 
                                 <li class="p-b-6">
 									<a href="profil.html?category=Les-droits-sexuels-et-reproductifs" class="filter-link stext-106 trans-04">
-										<i class="zmdi zmdi-check-circle" style="font-size: 18px; color: green;"></i> <strong style="color: #CC276A;"> 2</strong> -Les droits sexuels et reproductifs
+										<i class="zmdi zmdi-check-circle" style="font-size: 18px; color: green;"></i> <strong style="color: #CC276A;"> 2</strong> -Les droits sexuels et reproductifs ?
 									</a>
 								</li>  
 							</ul>
@@ -289,7 +298,7 @@
 							<ul>
 								<li class="p-b-6">
 									<a href="profil.html?category=Les-relations-saines" class="filter-link stext-106 trans-04">
-										<i class="zmdi zmdi-check-circle" style="font-size: 18px; color: green;"></i><strong style="color: #CC276A;"> 3</strong> -Les relations saines
+										<i class="zmdi zmdi-check-circle" style="font-size: 18px; color: green;"></i><strong style="color: #CC276A;"> 3</strong> -Les relations saines ?
 									</a>
 								</li> 
 							</ul>
@@ -300,7 +309,7 @@
 							<ul>
 								<li class="p-b-6">
 									<a href="profil.html?category=Les-contraceptions" class="filter-link stext-106 trans-04">
-										<i class="zmdi zmdi-check-circle" style="font-size: 18px; color: green;"></i><strong style="color: #CC276A;"> 4</strong> -Les contraceptions
+										<i class="zmdi zmdi-check-circle" style="font-size: 18px; color: green;"></i><strong style="color: #CC276A;"> 4</strong> -Les contraceptions ?
 									</a>
 								</li> 
 							</ul>
@@ -310,7 +319,7 @@
 							<ul>
 								<li class="p-b-6">
 									<a href="profil.html?category=Les-infections-sexuellement-transmissibles-(IST)" class="filter-link stext-106 trans-04">
-										<i class="zmdi zmdi-check-circle" style="font-size: 18px; color: green;"></i><strong style="color: #CC276A;"> 5</strong> -Les infections sexuellement transmissibles (IST)
+										<i class="zmdi zmdi-check-circle" style="font-size: 18px; color: green;"></i><strong style="color: #CC276A;"> 5</strong> -Les infections sexuellement transmissibles (IST) ?
 									</a>
 								</li> 
 							</ul>

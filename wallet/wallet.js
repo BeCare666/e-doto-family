@@ -107,10 +107,10 @@ const firebaseConfig = {
             const userLi = document.createElement("p");
             userLi.innerHTML = `${usergal.status ? `<p class="txn-list" style="cursor: pointer !important; border-radius: 5px !important;">
             <strong id="IDTRANSLATEWALLETU">En cours</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>${usergal.time} 
-            </strong><span class="debit-amount" style="color: green !important;">${usergal.gain} $</span></p>`: 
+            </strong><span class="debit-amount" style="color: green !important;">${usergal.gain} FCFA</span></p>`: 
             `<p class="txn-list" style="cursor: pointer !important; border-radius: 5px !important;">
             <strong id="IDTRANSLATEWALLETX">Payé</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>${usergal.time} 
-            </strong><span class="debit-amount" style="color:#FFB6C1 !important;">${usergal.gain} $</span></p>`} `;
+            </strong><span class="debit-amount" style="color:#FFB6C1 !important;">${usergal.gain} FCFA</span></p>`} `;
             
             userListUl.appendChild(userLi);
            

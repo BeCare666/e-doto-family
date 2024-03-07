@@ -73,13 +73,20 @@
                             email: tableEmail[0],
                             username : username,
                             ABONNEMENT : false,
-                            STATUS:true                          
+                            STATUS:true,
+                            STATUSAFILIATE:false,
+                            SOLDEAFILIATE:0,
+                            GETALLWALLET :"",                     
                             }).then(() => {  
                             swal({
                             title: "Félicitations",
-                            text: "Votre a été finalisé!",
+                            text: "Votre compte a été finalisé!",
                             icon: "success",
                             closeOnClickOutside: false,
+                            }).then((result)=>{
+                                if(result.isConfirmed){
+                                    window.location.reload();   
+                                }
                             })
                             }).catch((error)=>{
                             swal({
@@ -115,17 +122,16 @@
           <ul>
           <li  style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"><span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>${useremail}</li>
           <li><span class="icon"><i class="fas fa-handshake" aria-hidden="true"></i></span>${contentwx}</li>
+          <li><span class="icon"><a href="./wallet/wallet.html"><i class="fas fa-wallet" aria-hidden="true" style="color: white !important;"></i></span>Retirer vos gains </a></li>
           <li><span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>Allez à l'accueil</li>
-          <li><span class="icon"><a href="./wallet/wallet.html"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></span>Retirer vos gains </a></li>
           <li><span class="icon"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></span>Deconnecter</li>
           <li><span class="icon"><i class="fas fa-trash" aria-hidden="true"></i></span>supprimer votre compte</li>
-          <li><span class="nav-item" id="affiliateID" >
-          <a class="nav-link" style="cursor: pointer; color: blue !important;"><span class="icon"><i class="fas fa-trash" aria-hidden="true"></i></span>Copier le lien d'affiliation.</a>
+          <li id="affiliateID">
+          <a style="cursor: pointer; color: blue !important;"><span class="icon"><i class="fas fa-copy" aria-hidden="true"></i></span>Copier le lien d'affiliation.</a>
            <form data-copy=true>
              <input id="linkInput" type="text" data-click-select-all style="border: none !important; cursor: pointer; border-radius: 5px !important; opacity:0;" />
            </form>
-         </span>
-      </li>
+         </li>
         </ul>           
           `
         //function to generate affilition link

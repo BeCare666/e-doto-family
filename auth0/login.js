@@ -36,8 +36,7 @@ const firebaseConfig = {
         var useruid = user.uid;
         if(user.emailVerified){
         // L'utilisateur existe avec l'e-mail et le mot de passe donnés 
-        document.getElementById('sameToBodyx').style.display = "none"
-        
+        document.getElementById('sameToBodyx').style.display = "none"      
         //const userId = userSnapshot.key;
         document.getElementById('email').value = ""
         document.getElementById('password').value = ""
@@ -52,6 +51,13 @@ const firebaseConfig = {
         // funnction to get cookies options     
         localStorage.setItem("Email", email);
         localStorage.setItem("Password", password);
+        const userafiliateIdB = localStorage.getItem("userafiliateIdB");
+        if(userafiliateIdB){
+          localStorage.setItem("userafiliateIdC", userafiliateIdB);
+          localStorage.removeItem("userafiliateIdB");
+        }else{
+
+        }
         setTimeout(()=>{
         window.location.href = "../profil.html"
         },5000)

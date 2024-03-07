@@ -31,9 +31,14 @@ const firebaseConfig = {
         // Envoi de l'e-mail de vérification
         user.sendEmailVerification()
           .then(() => {
+            const userafiliateIdA = localStorage.getItem("userafiliateIdA");
+            if(userafiliateIdA){
+              localStorage.setItem("userafiliateIdB", userafiliateIdA);
+              localStorage.removeItem("userafiliateIdA")
+            }else{
+
+            }
           // E-mail de vérification envoyé avec succès
-          //document.getElementById('sameToBodyx').style.display = "none"
-          // document.getElementById('contentSignup').style.display = "none"
            window.location.href = "ux.html"
           //  window.location.href = "validemail.html"
             

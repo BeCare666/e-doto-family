@@ -252,6 +252,13 @@
         once: true,
         mirror: false
       });
+      const urlParams = new URLSearchParams(window.location.search);
+      const userafiliateIdValA = urlParams.get("user");
+      if(userafiliateIdValA){
+        localStorage.setItem("userafiliateIdA", userafiliateIdValA)
+      }else{
+
+      }
     });
   
   })()

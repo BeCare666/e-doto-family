@@ -3690,6 +3690,14 @@ iframe {border: none;}
   background-repeat: no-repeat;
   background-size: cover;
 }
+#headerInfoID img {
+  height: 80vh !important; width: 100% !important;
+}
+@media (max-width: 672px) {
+  #headerInfoID img {
+    height: 55vh !important; width: 100% !important;
+  }
+}
 
 @media (max-width: 992px) {
   .parallax100 {

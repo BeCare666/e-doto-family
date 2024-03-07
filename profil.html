@@ -214,9 +214,10 @@
 						<div class="row cf">
 						  <div id="card2" class="card four col">
 							<div class="header"></div>
-							<div class="wrapper">
+							<div class="wrapper" style="height: 80vh; overflow: auto;">
 							  <div class="image-wrapper"><img src="https://static.pexels.com/photos/7097/people-coffee-tea-meeting.jpg" alt=""></div>
 							  <h3 class="name" id="usernameID"></h3>
+							  <h6 class="name" id="SoldeId" style="text-align: center !important; margin-top: 7px;"></h6>
 							  <div class="social cf" style="display: none;">
 								<div class="four col">
 								  <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -614,12 +615,13 @@
 				ps.update();
 			})
 		});
+		const UserId = localStorage.getItem("unserconnect")
+		
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
 	<script src="js/getproducts.js"></script>
 	<script src="https://cdn.kkiapay.me/k.js"></script>
-
 </body>
 </html>
 

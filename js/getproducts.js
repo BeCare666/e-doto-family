@@ -72,7 +72,8 @@
                             userId : userId,
                             email: tableEmail[0],
                             username : username,
-                            ABONNEMENT : false,                            
+                            ABONNEMENT : false,
+                            STATUS:true                          
                             }).then(() => {  
                             swal({
                             title: "Félicitations",
@@ -102,10 +103,10 @@
           var useremail = snapshot.val().email;
           var username = snapshot.val().username;
           var ABONNEMENT = snapshot.val().ABONNEMENT;
-      
+          var SoldeText = snapshot.val().SOLDEAFILIATE;
           var ABIDX = document.getElementById("userABID")
           var usernameID = document.getElementById("usernameID")
-
+          var Solde = document.getElementById("SoldeId")
           const contentwx = snapshot.val().ABONNEMENT == false
           ? `Aucun abonnement `   
           : `<i class="zmdi zmdi-check-circle" style="font-size: 18px; color: green;"></i> Premium`;
@@ -115,11 +116,36 @@
           <li  style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"><span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>${useremail}</li>
           <li><span class="icon"><i class="fas fa-handshake" aria-hidden="true"></i></span>${contentwx}</li>
           <li><span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>Allez à l'accueil</li>
+          <li><span class="icon"><a href="./wallet/wallet.html"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></span>Retirer vos gains </a></li>
           <li><span class="icon"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></span>Deconnecter</li>
           <li><span class="icon"><i class="fas fa-trash" aria-hidden="true"></i></span>supprimer votre compte</li>
-        </ul>          
+          <li><span class="nav-item" id="affiliateID" >
+          <a class="nav-link" style="cursor: pointer; color: blue !important;"><span class="icon"><i class="fas fa-trash" aria-hidden="true"></i></span>Copier le lien d'affiliation.</a>
+           <form data-copy=true>
+             <input id="linkInput" type="text" data-click-select-all style="border: none !important; cursor: pointer; border-radius: 5px !important; opacity:0;" />
+           </form>
+         </span>
+      </li>
+        </ul>           
           `
+        //function to generate affilition link
+        const linkInput = document.getElementById('linkInput');
+        const copyButton = document.getElementById('affiliateID');
+        //linkInput.value = `Copier ici votre lien d'affiliation.`
+        // function to hide border when you click
+        copyButton.addEventListener('click', () => {
+        linkInput.value = `https://edotofamily.netlify.app/?user=${UserId}`
+        linkInput.select(); // Sélectionne le texte dans l'input
+        document.execCommand('copy'); // Copie le texte sélectionné dans le presse-papiers
+        swal({
+            title: "Super !",
+            text: "Votre lien a été copié ans le presse-papiers",
+            icon: "success",
+            closeOnClickOutside: false,
+            })
+        });
           usernameID.innerHTML = `${username} `
+          Solde.innerHTML = `Gains : ${SoldeText} FCFA`
          document.getElementById("scheduleID").addEventListener('click', function(){
             if(snapshot.val().ABONNEMENT){
                 window.location.href = "./rdv/rdv.html"

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete User by ID</title>
+  <!-- Inclure les scripts Firebase -->
+  <!-- Favicons -->
+  <link href="./../assets/img/logoilli.jpeg" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+   <!-- Link to import alert personnal -->
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+ 
+</head>
+<body>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script  src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+  <script type="module">
+
+var OneUserIDyAuth = localStorage.getItem("userIdTake");
+    // Configurer votre application Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
+        authDomain: "illicolove0.firebaseapp.com",
+        databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
+        projectId: "illicolove0",
+        storageBucket: "illicolove0.appspot.com",
+        messagingSenderId: "687063035754",
+        appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
+    };
+
+    // Initialiser Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Fonction pour supprimer l'utilisateur
+    function deleteUser() {
+
+        Swal.fire({
+         title: "Supprimer l'user",
+         icon: 'info', 
+         confirmButtonText: 'Supprimer',            
+         allowOutsideClick: false,
+         }).then((result) => {
+         if (result.isConfirmed) {
+        getAuth()
+        .deleteUser(OneUserIDyAuth)
+        .then(() => {
+            console.log('Successfully deleted user');
+        })
+        .catch((error) => {
+            console.log('Error deleting user:', error);
+        });
+
+       
+        }
+        })
+
+    }deleteUser()
+  </script>
+</body>
+</html>

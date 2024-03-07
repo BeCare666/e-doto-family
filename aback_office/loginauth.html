@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://gerardsodinyessi.github.io/edoto-family/assets/img/logonavigator.png" rel="icon" />
+    <title>edotofamily admin  - Login</title>
+  <!-- Link to import alert personnal -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+    * {
+        font-family: 'Montserrat-bold', sans-serif;
+        font-size: 14px !important;
+    }
+    </style>
+
+</head>
+
+<body class="" style="background-color: #1f2029;
+border: none;
+-webkit-transition: all 200ms linear;
+transition: all 200ms linear;
+box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);">
+
+    <div class="container" id="LoginAdminId">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9" style="margin-top: 14vh !important;">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row " >
+                            <div class="col-lg-6 d-none d-lg-block">
+                                <img src="img/signin.jpg" alt="" style="height: 100%; width: 100%;">
+                            </div>
+                            <div class="col-lg-6" style="background-color: #292c42; color: white !important;">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4" style="color: white !important;">Entrer les identifiants pour vous 
+                                            connecter à l'administration illicolove.</h1>
+                                    </div>
+                                    <form class="user" action="javascript:submitmy()">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                placeholder="Entre Votre Email ...">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user"
+                                                id="exampleInputcode" aria-describedby="emailHelp"
+                                                placeholder="Mettez le code d'accèss">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                <label class="custom-control-label" for="customCheck">Se rappeller de moi !</label>
+                                            </div>
+                                        </div>
+                                        <input type="submit" class="btn btn btn-block" value="Se connecter" 
+                                        style="background-color: #FFB6C1 !important; color: white !important;
+                                       padding-top: 9px !important;  padding-bottom: 9px !important;">
+                                        <hr>
+                                    </form>
+                                    <hr>
+                                    <hr>
+                                   <!-- <div class="text-center">
+                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="register.html">Create an Account!</a>
+                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBdncSQelmFoSYFShX4SXm8lVrPaWeLGzA",
+            authDomain: "e-doto.firebaseapp.com",
+            databaseURL: "https://e-doto-default-rtdb.firebaseio.com",
+            projectId: "e-doto",
+            storageBucket: "e-doto.appspot.com",
+            messagingSenderId: "153793942595",
+            appId: "1:153793942595:web:158753b614bf87faaef0f6"
+        };
+        firebase.initializeApp(firebaseConfig);
+      
+firebase.auth().onAuthStateChanged(function(user) { 
+        if(user === null){
+            window.location.href = "login.html"
+ }else{
+ }
+ });
+function submitmy(){
+ const email = document.getElementById('exampleInputEmail').value;
+ //const ExampleInputnom = document.getElementById('exampleInputnom').value; 
+const CodeAcces = document.getElementById('exampleInputcode').value;
+const loginAdminId = document.getElementById('LoginAdminId')
+// Créer une référence à la base de données Firebase
+const dbRef = firebase.database().ref();  
+// Obtenez une référence à l'emplacement contenant les données d'utilisateur
+ const usersRef = dbRef.child("admin");
+
+// Utilisez la méthode Firebase once() pour obtenir une copie des données de l'utilisateur à partir de la base de données
+// Utilisez la méthode Firebase once() pour obtenir une copie des données de l'utilisateur à partir de la base de données
+usersRef.orderByChild("email").equalTo(email).once("value", function(snapshot) {
+if (snapshot.exists()) {
+  snapshot.forEach(function(userSnapshot) {
+    // Vérifiez si le mot de passe de l'utilisateur correspond au mot de passe donné
+    if (userSnapshot.val().codeAcces === CodeAcces) {
+        loginAdminId.style.display = "none"
+        document.getElementById('exampleInputEmail').value = ""
+        document.getElementById('exampleInputcode').value.value = ""
+        Swal.fire({
+        title: 'Connexion avec succèss',
+        icon: 'success',        
+        allowOutsideClick: false,
+        confirmButtonText: `Accéder à l'admin !`,
+        }).then((result) => {
+        var userId =  userSnapshot.val().userId
+        var yemail =  userSnapshot.val().email
+        localStorage.setItem("userID", userId)
+        localStorage.setItem("Yemail", yemail)
+        if (result.isConfirmed) {
+        window.location.href = "index.html"
+    }
+})
+
+    } else {
+        Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: `Le code n'est pas valide`,
+        timer: 3000,
+        }).then((result)=>{
+            if (result.isConfirmed) {
+                loginAdminId.style.display = "block"
+    }
+        })
+    setTimeout(()=>{
+        loginAdminId.style.display = "block"
+    },3000)
+    }
+  });
+} else {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: `Vous n'êtes pas confirgueré en tan que Admin !`,
+        timer: 3000,
+        }).then((result)=>{
+            if (result.isConfirmed) {
+                loginAdminId.style.display = "block"
+    }
+        })
+        setTimeout(()=>{
+        loginAdminId.style.display = "block"
+    },3000)
+}
+});
+
+      
+}
+
+
+      </script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

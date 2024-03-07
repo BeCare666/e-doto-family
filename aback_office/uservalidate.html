@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title> Details</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="./../assets/img/logoilli.jpeg" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+        <!-- Custom fonts for this template-->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+    
+        <!-- Custom styles for this template-->
+        <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Link to import alert personnal -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+<!-- Importation de la bibliothèque Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+<link
+href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+rel="stylesheet">
+<style>
+* {
+font-family: 'Montserrat-bold', sans-serif;
+font-size: 13.5px !important;
+}
+</style>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet">
+    <style>
+    * {
+      font-family: 'Montserrat-bold', sans-serif;
+      font-size: 14px !important;
+    }
+  </style>
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!--Importation de smtpjs pour l'envoi de mail-->
+     <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!-- Template Main CSS File -->
+    <link href="assets/css/stylea.css" rel="stylesheet">
+  </head>
+
+  <body>
+         <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top" style="background-color: white;">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="tables.html" class="logo d-flex align-items-center">
+        <!-- <img src="assets/img/logo.png" alt="">-->
+        <button class="btn btn" style="margin-left: 5px; cursor: pointer; background-color: #FFB6C1; color: white;" 
+        role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button>
+      </a>
+
+      <nav id="navbar" class="navbar" style="cursor: pointer;">
+       <a href="./../index.html"> <i class="bi bi-house-door" style="font-size: 26px !important; color: #FFB6C1;"></i></a>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+    <section id="myBodyID">
+        <main id="main">
+          <!-- ======= Portfolio Details Section ======= -->
+          <section id="portfolio-details" class="portfolio-details">
+            <div class="container">
+              <div class="row gy-4">
+    
+                <div class="col-lg-4 " id="mySliderId" >
+                  <div class="slider">
+                    <div class="slide">
+                      <div id="img1Id" style=" border: #FFB6C1 solid 1px;"></div>
+                      <!--<img  alt="Image 1" style="height: 55vh; width: 100%;"  >-->
+                    </div>
+                    <!--<div class="slide">
+                      <img   alt="Image 2" style="height:
+                         55vh; width: 100%;" id="img2Id">
+                    </div>-->
+                  </div>
+                </div>
+                <div class="col-lg-4" id="mycoodonnees" style=" border: #FFB6C1 solid 1px;">
+                  <div class="portfolio-info" style="height: 61vh !important;"  
+                  >
+                    <h2><strong>Ses coordonnées :</strong></h2>
+                    <span id="iconValidateID"></span>
+                    <ul class="list-group mt-4"  >
+                      <li class="list-group-item" >
+                        <div class="d-flex align-items-center">
+                          <div id="iconiconIdx">
+
+                          </div>
+                          <div>
+                            <h5 class="mb-1" id="ConnexionMyID"></h5>
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-3">
+                          <div id="iconiconId">
+
+                          </div>
+                         <!--  <i class="bi bi-person-fill me-2 text-primary"></i>-->
+                          <div>
+                            <h5 class="mb-1" id="fullname"></h5>
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-3">
+                          <i class="bi bi-geo-alt-fill me-2 text-info"></i>
+                          <p class="mb-0" id="residenceId"></p>
+                        </div>
+                        <div class="d-flex align-items-center mt-3">
+                          <i class="bi bi-briefcase-fill me-2 text-success"></i>
+                          <p class="mb-0" id="occupation"></p>
+                        </div>
+                        <div id="contactUserID">
+                        <div class="d-flex align-items-center mt-3">
+                          <i class="bi bi-telephone-fill me-2 text-success"></i> 
+                          <p class="mb-0" id="phone"></p>
+                        </div>
+                        <div class="d-flex align-items-center mt-3" style="display: none !important;">
+                          <i class="bi bi-whatsapp me-2 text-success"></i>
+                          <p class="mb-0" id="whatsapp"></p>
+                        </div>
+                        <div class="d-flex align-items-center mt-3">
+                          <i class="bi bi-envelope-fill me-2 text-primary"></i>
+                          <p class="mb-0" id="myEmail"></p>
+                        </div>
+                        <div class="d-flex align-items-center mt-3" style="cursor: pointer;">
+                          <i class="bi bi-file-text-fill me-2" id="myDoctextfill" ></i>
+                          <p class="mb-0" id="myDoc">Consulter son ID</p>
+                        </div>
+                        </div>
+    
+                      </li>
+                      <!-- Ajoutez d'autres éléments de liste ici -->
+                    </ul><br>
+                    <button class="btn btn-primary" id="updateuserunityId" data-toggle="modal" data-target="#exampleModal">Mettre à jour ses unités</button>
+
+                  </div>
+                </div>
+                <div class="col-lg-4" id="formysuiteId" >
+                    <span class="nav-item dropdown no-arrow" id="dropdowtToValidate" 
+                    style="cursor: pointer;"> <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400" 
+                    style="color: #FFB6C1 !important;"></i></span> 
+                  <div class="portfolio-info" style="height: 55vh !important; border: #FFB6C1 solid 1px;">
+                   <div style="height: 22vh;">
+                    <h2><strong>Ses préférences physiques :</strong></h2>
+                    <p id="suiteId"></p>
+                   </div><br>
+                   <h2><strong>Autres précisions :</strong></h2>
+                   <p id="myprefenceId"></p>
+                  </div>
+                  
+                </div>
+              </div>
+              <br>
+              <style>
+                table {
+                  border-collapse: collapse;
+                  width: 100%;
+                  border: #FFB6C1 solid 1px;
+                }
+                
+                th, td {
+                  border: 1px solid #ddd;
+                  padding: 8px;
+                  text-align: left;
+                  width: 50%;
+                   border: #FFB6C1 solid 1px;
+                }
+                
+                th {
+                  background-color: #f2f2f2;
+                }
+                
+                tr:nth-child(even) {
+                  background-color: #f9f9f9;
+                }
+                
+                tr:hover {
+                  background-color: #eaeaea;
+                }
+              </style>
+                
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Mon Profil</th>
+                      <th>Réponses</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Mon pays de résidence :</td>
+                      <td id="thmonpays"></td>
+                    </tr>
+                    <tr>
+                      <td>Ma Ville de résidence :</td>
+                      <td id="thmaville"></td>
+                    </tr>
+                    <tr>
+                      <td>Mon nom ou pseudonyme:</td>
+                      <td id="monpseudonyme"></td>
+                    </tr>
+                    <tr>
+                      <td>Ma tranche d'âge :</td>
+                      <td id="monages"></td>
+                    </tr>
+                    <tr>
+                      <td>Mon genre:</td>
+                      <td id="myGenre"></td>
+                    </tr>
+                    <tr>
+                      <td>Ma situation matrimoniale:</td>
+                      <td id="masituamatri"></td>
+                    </tr>
+                    <tr>
+                      <td>Ma nationalité :</td>
+                      <td id="manationalite"></td>
+                    </tr>
+                    <tr>
+                      <td>Mon travail ou occupation:</td>
+                      <td id="montravail"></td>
+                    </tr>
+                    <tr>
+                      <td>Je veux une rencontre :</td>
+                      <td id="unerencontreId"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+                <br>
+                
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Profil que je cherche</th>
+                      <th>Réponses</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Son genre :</td>
+                      <td id="qsongenre"></td>
+                    </tr>
+                    <tr>
+                      <td>Sa tranche d'âge :</td>
+                      <td id="satranche"></td>
+                    </tr>
+                    <tr>
+                      <td>Sa situation matrimoniale :</td>
+                      <td id="sasituationMa"></td>
+                    </tr>
+                    <tr>
+                      <td>Son pays de résidence :</td>
+                      <td id="sonpays"></td>
+                    </tr>
+                    <tr>
+                      <td>Sa ville d'habitation :</td>
+                      <td id="saville"></td>
+                    </tr>
+                    <tr>
+                      <td>Son travail ou occupation :</td>
+                      <td id="sontravail"></td>
+                    </tr>
+                    </tbody>
+                </table>            
+            </div>
+          </section><!-- End Portfolio Details Section -->
+    
+        </main><!-- End #main -->
+     </section>
+
+        <style>
+            #dropdowtToValidate{
+                position: absolute;
+                top: 23px;
+                right: 17px;
+            }
+            .my-confirm-button-class {
+            background-color: #4caf50 !important; /* Couleur de fond pour le bouton de confirmation */
+            color: #ffffff; /* Couleur du texte pour le bouton de confirmation */
+            }
+
+            .my-deny-button-class {
+            background-color:#808080  !important; /* Couleur de fond pour le bouton de refus */
+            color: #ffffff; /* Couleur du texte pour le bouton de refus */
+            }
+
+            .my-cancel-button-class {
+            background-color: #f44336 !important; /* Couleur de fond pour le bouton Annuler */
+            color: #ffffff; /* Couleur du texte pour le bouton Annuler */
+            }
+            #iconValidateID{
+                position: absolute;
+                top: 25px;
+                left: 50.5vh;
+            }
+        </style>
+        <script>
+          const images = document.querySelectorAll('.slider img');
+          let currentImageIndex = 0;
+      
+          function showNextImage() {
+            images[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].classList.add('active');
+          }
+      
+          setInterval(showNextImage, 2000); // Change d'image toutes les 2 secondes
+          //function to validate compte
+        </script>
+      </section><!-- End Portfolio Details Section -->
+
+    </main><!-- End #main -->
+    <div style="background-color: #FFB6C1 !important;" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Envoie d'unités</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Metter le nombre d'unités</label>
+                <input type="text" class="form-control" id="recipient-name" oninput="validerSaisie(this)">
+              </div>
+             
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            <button type="button" class="btn btn-primary" id="sendunityforuser"  data-dismiss="modal">Envoyer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="copyright" style="color: #000080;">
+          &copy; Copyright 2024 illicolove. All Rights Reserved
+        </div>
+        <div class="credits" style="color: #000080;">
+          Designed by illicolove
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+    </section>
+    <!--  
+      //Pour affiche le logo illicolove dans les mails
+      
+      <div style="text-align: center;">
+      <img src="https://illicolove.netlify.app/assets/img/logo_illico-removebg-preview.png" style="max-width: 17%; height: auto; display: inline-block;" />
+    </div>-->
+    <script>
+    function validerSaisie(input) {
+    const valeurSaisie = input.value;
+    const regexLettresAvecEspaces = /^\d+$/;
+
+    if (!regexLettresAvecEspaces.test(valeurSaisie)) {
+      //alert("ne fait pas ça")
+      // Effacez la saisie incorrecte
+      input.value = input.value.replace(/\D/g, '');
+     
+    } else {
+    }
+  }
+    </script>
+          <a href="#" class="back-to-top d-flex align-items-center
+            justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+          <div id="preloader"></div>
+          <script type="module">
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
+              authDomain: "illicolove0.firebaseapp.com",
+              databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
+              projectId: "illicolove0",
+              storageBucket: "illicolove0.appspot.com",
+              messagingSenderId: "687063035754",
+              appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
+        };
+        firebase.initializeApp(firebaseConfig); 
+        //--------------Select data-----------------//  
+        function seleectData() {
+        const UserID = localStorage.getItem("userID");
+        var Thmonpays = document.getElementById('thmonpays'); 
+        var MyDoc = document.getElementById('myDoc');
+        var MyDoctextfill = document.getElementById('myDoctextfill');
+        var Thmaville = document.getElementById('thmaville');
+        var Monpseudonyme = document.getElementById('monpseudonyme');
+        var Monages = document.getElementById('monages');
+        var MyGenre = document.getElementById('myGenre');
+        var Masituamatri = document.getElementById('masituamatri');
+        var Manationalite = document.getElementById('manationalite');
+        var Montravail = document.getElementById('montravail');
+        var UnerencontreId = document.getElementById('unerencontreId');
+        var Qsongenre = document.getElementById('qsongenre');
+        var Satranche = document.getElementById('satranche');
+        var SasituationMa = document.getElementById('sasituationMa');
+        var Sonpays = document.getElementById('sonpays');
+        var Saville = document.getElementById('saville');
+        var Sontravail = document.getElementById('sontravail'); 
+        var connexionMyID = document.getElementById('ConnexionMyID'); 
+        var IconiconId = document.getElementById('iconiconId'); 
+        var IconiconIdx = document.getElementById('iconiconIdx'); 
+        // function to logout
+        firebase.auth().onAuthStateChanged(function(user) { 
+        if(user === null){
+            window.location.href = "login.html"
+        }else{  
+          var OneUserID = localStorage.getItem("userIdTake").toString();
+        // alert(OneUserID)
+          const database = firebase.database();
+          const userRef = database.ref(`/utilisateurs/${OneUserID}`);
+          userRef.once("value").then((snapshot) => {
+              if (snapshot.exists()) {
+                // Save fulle name and email
+                var Userfullename = snapshot.val().fullname
+                var userIdMX = snapshot.val().userId
+                var UserEmail =  snapshot.val().email
+                document.getElementById('preloader').style.display = "none"
+                //var photoDataUrl = snapshot.val().PIECESDIDENTITE ? 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE : '';
+                //var photoDataUrl2 = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
+                var photoDataUrl3 = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
+                              // Get CIN
+              MyDoc.addEventListener('click', function(){
+               MyBodyID.style.display = "none" 
+               Footer.style.display = "none" 
+                if(snapshot.val().MESDEUXPHOTOS){
+                  Swal.fire({
+                  title: 'CIN !',
+                  //text: 'Modal with a custom image.',
+                  imageUrl: `${photoDataUrl3} `,
+                  imageWidth: 400,
+                  imageHeight: 300,
+                  imageAlt: 'Custom image',
+                  allowOutsideClick: false,
+                }).then((result) => {
+                if (result.isConfirmed) {
+                MyBodyID.style.display = "block" 
+                 Footer.style.display = "block" 
+                }
+                })
+                }else{
+                Swal.fire({
+                title: 'Oops..',
+                icon: 'info',
+                text:"Aucune pièce trouvée" ,            
+                allowOutsideClick: false,
+                }).then((result) => {
+                if (result.isConfirmed) {
+                MyBodyID.style.display = "block" 
+                 Footer.style.display = "block" 
+                }
+                })
+                }
+              })
+                //conditon ternaire to genre
+                var status = snapshot.val().MONSEXE
+                var unityUser = snapshot.val().COMPTECREDIT                
+                var Img1Id = document.getElementById('img1Id');
+                var photoDataUrl = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
+                Img1Id.innerHTML = `${snapshot.val().PIECESDIDENTITE ? `<img src="${photoDataUrl}" alt="Image 1" style="height: 55vh; width: 100%;"/>` : '<img src="img/log.png" alt="Image 1" style="max-width: 100%; max-height: 55vh; width: auto; height: auto;"/>&nbsp;'}`;
+                //var img2Id = document.getElementById('img2Id');
+                //img2Id.src = photoDataUrl2
+                document.getElementById('fullname').innerHTML = `${snapshot.val().fullname}`
+                document.getElementById('phone').innerHTML = `${snapshot.val().TELEPHONE}`
+               // document.getElementById('whatsapp').innerHTML = `${snapshot.val().TELEPHONE}`
+                document.getElementById('myEmail').innerHTML = `${snapshot.val().email}`
+                document.getElementById('residenceId').innerHTML = `${snapshot.val().MAVILLEDERESIDENCE}`
+                document.getElementById('occupation').innerHTML = `${snapshot.val().MONTRAVAILLEOUOCCUPATION}`
+                var suiteIdCondi = snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE ? snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE : `<i class="fas fa-database" style="font-size: 15vh !important; color: #FFB6C1;"></i>`;
+                document.getElementById('suiteId').innerHTML = `${suiteIdCondi}`
+                Thmonpays.innerHTML = `${snapshot.val().MYCOUNTRY}`
+                Thmaville.innerHTML = `${snapshot.val().MAVILLEDERESIDENCE}`
+                Monpseudonyme.innerHTML = `${snapshot.val().username}`
+                Monages.innerHTML = `${snapshot.val().MONAGE}`
+                MyGenre.innerHTML = `${snapshot.val().MONSEXE}`
+                Masituamatri.innerHTML = `${snapshot.val().MASITUATIONMATRIMONIALE}`
+                Manationalite.innerHTML = `${snapshot.val().MANATIONNALITE}`
+                Montravail.innerHTML = `${snapshot.val().MONTRAVAILLEOUOCCUPATION}`
+                UnerencontreId.innerHTML = `${snapshot.val().JEVEUXUNERENCONTRE}`
+                Qsongenre.innerHTML = `${snapshot.val().SEXEDEPROFILQUEJECHERCHE}`
+                Satranche.innerHTML = `${snapshot.val().SONAGEDEPROFILQUEJECHERCHE}`
+                SasituationMa.innerHTML = `${snapshot.val().SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE}`
+                Sonpays.innerHTML = `${snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE}`
+                Saville.innerHTML = `${snapshot.val().VILLEDHABITATIONDEPROFILQUEJECHERCHE}`
+                Sontravail.innerHTML = `${snapshot.val().TRAVAILDEDEPROFILQUEJECHERCHE}`
+                document.getElementById('myprefenceId').innerHTML = `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}`;
+                // to now if the user is connect or no
+                const content = snapshot.val().ONLINEDATE === snapshot.val().ONLINEHOURS
+                ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> ${snapshot.val().ONLINEHOURS} `   
+                : `En ligne le ${snapshot.val().ONLINEDATE} à ${snapshot.val().ONLINEHOURS}`;
+                connexionMyID.innerHTML = content
+                
+
+                // Sexe cl
+                
+                const contentwx = snapshot.val().MONSEXE === "Homme" || 
+                snapshot.val().MONSEXE === "Hombre" || 
+                snapshot.val().MONSEXE === "Man" || 
+                snapshot.val().MONSEXE ==="남자" || 
+                snapshot.val().MONSEXE ==="Uomo" || 
+                snapshot.val().MONSEXE ==="男" || 
+                snapshot.val().MONSEXE ==="男人" || 
+                snapshot.val().MONSEXE ==="Мужчина" || 
+                snapshot.val().MONSEXE ==="Homem" || 
+                snapshot.val().MONSEXE ==="Mann" ||
+                snapshot.val().MONSEXE === "رجل"
+                ? `<i class="bi bi-gender-male" style="color:#000080;"></i>`   
+                : `<i class="bi bi-gender-female" style="color:#FFB6C1;"></i>`;
+                IconiconId.innerHTML = contentwx
+
+                IconiconIdx.innerHTML = contentwx
+
+                var compteCertifie = snapshot.val().VALIDERMONCOMPTE
+                var comptesuspendu = snapshot.val().MONCOMPTESUSPENDU
+                var IconValidateID = document.getElementById('iconValidateID')
+
+                // start function to manage colors of the CIN 
+                if(!snapshot.val().MESDEUXPHOTOS){
+                  MyDoc.style.color = "#FFB6C1"
+                  MyDoctextfill.style.color = "#FFB6C1"
+                }else{
+                  MyDoc.style.color = "green"
+                  MyDoctextfill.style.color = "green"
+                }
+                 // end function to manage colors of the CIN 
+
+                if (compteCertifie) {
+                  IconValidateID.innerHTML = '<i class="bi bi-patch-check-fill text-primary"></i> ';
+                } else if (comptesuspendu) {
+                  IconValidateID.innerHTML = '<i class="fas fa-lock"  style="color: #FFB6C1 !important;"></i>';
+                } else {
+                  IconValidateID.innerHTML = '<i class="fas fa-times-circle"  style="color: #FFB6C1 !important;"></i>';
+                }
+                // document.getElementById('myprefenceId').innerHTML = `${snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE}`
+
+
+              //FOUNCTION TO SEND EMAIL FOR USER //
+              var validateVarible = document.getElementById('dropdowtToValidate');
+              var Footer = document.getElementById('footer');
+              var MyBodyID = document.getElementById('myBodyID');
+              validateVarible.addEventListener('click', function(){
+               MyBodyID.style.display = "none" 
+               Footer.style.display = "none" 
+              var OneUserIDy = localStorage.getItem("userIdTake");
+                Swal.fire({
+                title: 'Voulez-vous valider ce compte ?',
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: 'Certifier',
+                denyButtonText: `Suspendre`,
+                cancelButtonText: 'Supprimer',
+                allowOutsideClick: false,
+                footer:`<a href=""> <button class="fourth-button-class btn btn-primary" 
+                id="fourth-button">Retour</button></a>`,
+
+                customClass: {
+                confirmButton: 'my-confirm-button-class',
+                denyButton: 'my-deny-button-class', 
+                cancelButton: 'my-cancel-button-class', 
+                },
+                }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                //function to validate account
+
+                var dateActuelle = new Date();
+                // Date après trois jours
+                var dateApresTroisJours = new Date();
+                dateApresTroisJours.setDate(dateActuelle.getDate() + 3);
+
+                const newData = {
+                  VALIDERMONCOMPTE : true,
+                  MONCOMPTESUSPENDU : false,
+                  DATEUPLOADCNI : dateApresTroisJours,
+                  ALERTVALIDERMACIP : true,
+                };
+                userRef.update(newData, (error) => {
+                  if (error){
+                    alert("les données ne sont pas mise à jour " + error);
+                  }else{
+                // statr envoi de mail de validation
+                const apiKey = "1D5731AF3830C76F1A3295A44D90416F8BED40EFEA13E8767E9593501CA32F1E8EE00960B55ECB2336C7D408A052669D";
+                const apiUrl = "https://api.elasticemail.com/v2/email/send";
+                
+                // Définir les paramètres de l'e-mail
+                const emailParams = {
+                  apiKey: apiKey,
+                  subject: "Account validation",
+                  from: "info@illicolove.com",
+                  fromName: "illicolove",
+                  to: UserEmail,
+                  bodyHtml: `
+                  <table cellpadding="10" cellspacing="0" style="background-color: #f1f1f1; padding: 20px;">
+                  <tr>
+                      <td>
+                          <h1 style="color: #333; text-align: center !important;">Congratulations ${Userfullename}!</h1>
+                          <p style="font-size: 16px; color: #666;">
+                              We are pleased to inform you that your illicolove account has been successfully validated.
+                              This means you can now enjoy the following features:
+                          </p>
+                          <ul>
+                              <li>Edit your ad</li>
+                              <li>View available ads</li>
+                              <li>Buy units</li>
+                          </ul>
+                          <p style="font-size: 14px; color: #999;">
+                              <strong>NB:</strong> Click here <a href="https://illicolove.com/tx/usersendID.html">Link to submit proof</a>
+                              to submit your proof of identity.
+                              Failure to receive it by then, your account could be suspended for security reasons.
+                              Act quickly to avoid
+                              any interruption of service.
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                              Stay tuned for more exciting news!
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                              Sincerely,
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                              The illicolove team.
+                          </p>
+                      </td>
+                  </tr>
+              </table>
+
+                  `
+                };
+
+                // Effectuer une requête POST vers l'API ElasticEmail
+                fetch(apiUrl, {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                  },
+                  body: new URLSearchParams(emailParams)
+                })
+                  .then((response) => response.json())
+                  .then((data) => {
+                    //console.log(data); // Afficher la réponse de l'API ElasticEmail
+                    if (data.success) {
+                      //console.log("E-mail envoyé avec succès.");
+                    } else {
+                     // console.error("Erreur lors de l'envoi de l'e-mail.");
+                    }
+                  })
+                  .catch((error) => {
+                    //console.error("Erreur lors de la requête API :", error);
+                  });
+                 // end envoi de mail de validation
+                 
+                Swal.fire({
+                title: 'Validé',
+                icon: 'success',             
+                allowOutsideClick: false,
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    location.reload();
+                }
+                })
+                  }
+                })
+
+                } else if (result.isDenied) {
+                //function to update compte
+                const newDataisDenied = {
+                  VALIDERMONCOMPTE : false,
+                  MONCOMPTESUSPENDU : true
+                };
+                userRef.update(newDataisDenied, (error) => {
+                  if (error){
+                    alert("les données ne sont pas supprimées " + error);
+                  }else{
+                                  //  envoi de mail de suspension
+                const apiKey = "1D5731AF3830C76F1A3295A44D90416F8BED40EFEA13E8767E9593501CA32F1E8EE00960B55ECB2336C7D408A052669D";
+                const apiUrl = "https://api.elasticemail.com/v2/email/send";
+                // Définir les paramètres de l'e-mail
+                const emailParams = {
+                  apiKey: apiKey,
+                  subject: "Account suspension",
+                  from: "info@illicolove.com",
+                  fromName: "illicolove",
+                  to: UserEmail,
+                  bodyHtml: `
+                  <table cellpadding="10" cellspacing="0" style="background-color: #f1f1f1; padding: 20px;">
+                  <tr>
+                      <td>
+                          <h1 style="color: #333; text-align: center !important;">Sorry ${Userfullename}!</h1>
+                          <p style="font-size: 16px; color: #666;">
+                              We regret to inform you that your illicolove account has been suspended.
+                              Consequently, you will no longer be able to enjoy the following features:
+                          </p>
+                          <ul>
+                              <li>Edit your ad</li>
+                              <li>View available ads</li>
+                              <li>Buy units</li>
+                          </ul>
+                          <p style="font-size: 14px; color: #999;">
+                              Stay tuned for more updates!
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                              Sincerely,
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                              The illicolove team.
+                          </p>
+                      </td>
+                  </tr>
+              </table>
+
+                  `
+                };
+
+                // Effectuer une requête POST vers l'API ElasticEmail
+                fetch(apiUrl, {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                  },
+                  body: new URLSearchParams(emailParams)
+                })
+                  .then((response) => response.json())
+                  .then((data) => {
+                    console.log(data); // Afficher la réponse de l'API ElasticEmail
+                    if (data.success) {
+                      console.log("E-mail envoyé avec succès.");
+                    } else {
+                      console.error("Erreur lors de l'envoi de l'e-mail.");
+                    }
+                  })
+                  .catch((error) => {
+                    console.error("Erreur lors de la requête API :", error);
+                  });
+                 // end envoi de mail de suspension
+
+                Swal.fire('Ce compte a été suspendu', '', 'info').then((result) => {
+                if (result.isConfirmed) {
+                    location.reload();
+                }
+                })
+                  }
+                })
+               
+                }else{
+                Swal.fire({
+                title: 'Vous êtes sûr ?',
+                text: "Vous ne pourrez pas revenir en arrière !",
+                icon: 'warning',
+                showCancelButton: true,
+                allowOutsideClick: false,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Oui, supprimé le !'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                //function to delete compte
+                userRef.remove()
+                .then(() => {
+                //  envoi de mail de suppression
+                const apiKey = "1D5731AF3830C76F1A3295A44D90416F8BED40EFEA13E8767E9593501CA32F1E8EE00960B55ECB2336C7D408A052669D";
+                const apiUrl = "https://api.elasticemail.com/v2/email/send";
+
+                // Définir les paramètres de l'e-mail
+                const emailParams = {
+                  apiKey: apiKey,
+                  subject: "Account Deletion",
+                  from: "info@illicolove.com",
+                  fromName: "illicolove",
+                  to: UserEmail,
+                  bodyHtml: `
+                  <table cellpadding="10" cellspacing="0" style="background-color: #f1f1f1; padding: 20px;">
+                  <tr>
+                      <td>
+                          <h1 style="color: #333; text-align: center !important;">Sorry ${Userfullename}!</h1>
+                          <p style="font-size: 16px; color: #666;">
+                              We regret to inform you that your illicolove account has been deleted.
+                              Consequently, you will no longer be able to enjoy the following features:
+                          </p>
+                          <ul>
+                              <li>Edit your ad</li>
+                              <li>View available ads</li>
+                              <li>Buy units</li>
+                          </ul>
+                          <p style="font-size: 14px; color: #999;">
+                              Stay tuned for more updates!
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                              Sincerely,
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                              The illicolove team.
+                          </p>
+                      </td>
+                  </tr>
+              </table>
+
+                  `
+                };
+
+                // Effectuer une requête POST vers l'API ElasticEmail
+                fetch(apiUrl, {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                  },
+                  body: new URLSearchParams(emailParams)
+                })
+                  .then((response) => response.json())
+                  .then((data) => {
+                    console.log(data); // Afficher la réponse de l'API ElasticEmail
+                    if (data.success) {
+                      console.log("E-mail envoyé avec succès.");
+                    } else {
+                      console.error("Erreur lors de l'envoi de l'e-mail.");
+                    }
+                  })
+                  .catch((error) => {
+                    console.error("Erreur lors de la requête API :", error);
+                  });
+                 // end envoi de mail de suppression
+                    Swal.fire(
+                    'Supprimé!',
+                    'Ce compte a été supprimé',
+                    'success'
+                    ).then((result) => {
+                if (result.isConfirmed) {
+                window.location.href = "tables.html"
+                }
+                })
+                //window.location.reload();
+                }).catch((error) => {
+                  alert("les données ne sont pas supprimées " + error);
+                // alert("les données ne sont pas supprimées " + error);
+                setTimeout(()=>{
+                  window.location.reload();
+                },600)
+                });
+                }else{
+                location.reload();
+                }
+                })
+                }
+                })
+              })
+              
+              // start function to add or give unity for user
+              document.getElementById('sendunityforuser').addEventListener('click', function(){
+              var OneUserID = localStorage.getItem("userIdTake").toString();
+              var variableunity = document.getElementById('recipient-name').value;
+              var myCompta = parseFloat(unityUser);
+              var addunityForuser = parseFloat(variableunity)
+              var sommesUnity = myCompta + addunityForuser
+
+              const sendunity = {
+                COMPTECREDIT : sommesUnity,
+            };
+            userRef.update(sendunity, (error) => {
+              if (error){
+                Swal.fire({
+                  title: "Oops",
+                  text: "La mise a échoué !",
+                  icon: 'error'
+                });
+              }else{
+                Swal.fire({
+               title: "Succès",
+               text: "Les unités ont été ajoutés avec succès",
+               icon: 'success',
+               allowOutsideClick : false,
+              }).then((result)=>{
+                if(result.isConfirmed){
+                  window.location.reload();
+                }
+              })
+
+            setTimeout(()=>{
+              window.location.reload();
+            }, 6000)
+              }
+             })  
+              })
+             
+            // start function to add or give unity for user
+
+              } else {
+                document.getElementById('preloader').style.display = "none"
+                  alert("no data");
+              }
+          })
+          .catch((error) => {
+                alert("il y a une ERROR " + error);
+            });
+          }
+          })
+          }
+          window.onload = seleectData;
+          //function to manage user coumpt
+       
+         
+  </script>
+
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+  </body>
+
+</html>
+

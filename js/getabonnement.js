@@ -38,7 +38,7 @@
          document.getElementById('priceOfABONNE1w').addEventListener('click', function(){ 
             if(snapshot.val().ABONNEMENT == false){
                 openKkiapayWidget({
-                    amount: "1",
+                    amount: "500",
                     position: "center",
                     callback: "javascript:sendmycommandinCentremodale()",
                     data: "",

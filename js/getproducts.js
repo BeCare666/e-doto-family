@@ -152,11 +152,17 @@
             })
         });
         deleteIdButton.addEventListener('click', () => {
+            var addClassIdMdal = document.getElementById('addClassIdMdal');
+            addClassIdMdal.classList.remove("show-header-cart");
             Swal.fire({
                 title: "Alert",
                 text: "Vous ne pouvez plus revenir en arrière.",
                 icon: "info",
                 closeOnClickOutside: true,
+                confirmButton:false,
+                confirmButtonText:"Confirmer",
+                showCancelButton:true,
+                showCancelButtonText:"Retour",
                 }).then((result)=>{
                 if(result.isConfirmed){
                 const userRef = database.ref(`/utilisateurs`);

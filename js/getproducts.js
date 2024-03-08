@@ -144,7 +144,7 @@
         linkInput.value = `https://edotofamily.netlify.app/?user=${UserId}`
         linkInput.select(); // Sélectionne le texte dans l'input
         document.execCommand('copy'); // Copie le texte sélectionné dans le presse-papiers
-        Swal.fire({
+        swal({
             title: "Super !",
             text: "Votre lien a été copié ans le presse-papiers",
             icon: "success",

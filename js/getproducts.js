@@ -47,7 +47,7 @@
                           if (username) {                         
                             let timerInterval;
                             Swal.fire({
-                            title: "Finalisatin de vte cmpte",
+                            title: "Finalisation de votre cmpte",
                             html: "Votre compte sera finalisé au plus dans  <b></b> milliseconds.",
                             timer: 2000,
                             timerProgressBar: true,
@@ -78,7 +78,7 @@
                             SOLDEAFILIATE:0,
                             GETALLWALLET :"",                     
                             }).then(() => {  
-                            swal({
+                            Swal.fire({
                             title: "Félicitations",
                             text: "Votre compte a été finalisé!",
                             icon: "success",
@@ -89,7 +89,7 @@
                                 }
                             })
                             }).catch((error)=>{
-                            swal({
+                            Swal.fire({
                             title: "Erreur ",
                             text: "il y a une erreur ",
                             icon: "error",
@@ -124,8 +124,8 @@
           <li><span class="icon"><i class="fas fa-handshake" aria-hidden="true"></i></span>${contentwx}</li>
           <li><span class="icon"><a href="./wallet/wallet.html"><i class="fas fa-wallet" aria-hidden="true" style="color: white !important;"></i></span>Retirer vos gains </a></li>
           <li><span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>Allez à l'accueil</li>
-          <li><span class="icon"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></span>Deconnecter</li>
-          <li><span class="icon"><i class="fas fa-trash" aria-hidden="true"></i></span>supprimer votre compte</li>
+          <li><span class="icon"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></span><a href="./auth0/login.html">Deconnecter</a></li>
+          <li id="deleteId"><span class="icon"><i class="fas fa-trash" aria-hidden="true"></i></span>Supprimer votre compte</li>
           <li id="affiliateID">
           <a style="cursor: pointer; color: blue !important;"><span class="icon"><i class="fas fa-copy" aria-hidden="true"></i></span>Copier le lien d'affiliation.</a>
            <form data-copy=true>
@@ -137,18 +137,57 @@
         //function to generate affilition link
         const linkInput = document.getElementById('linkInput');
         const copyButton = document.getElementById('affiliateID');
+        const deleteIdButton = document.getElementById('deleteId');
         //linkInput.value = `Copier ici votre lien d'affiliation.`
         // function to hide border when you click
         copyButton.addEventListener('click', () => {
         linkInput.value = `https://edotofamily.netlify.app/?user=${UserId}`
         linkInput.select(); // Sélectionne le texte dans l'input
         document.execCommand('copy'); // Copie le texte sélectionné dans le presse-papiers
-        swal({
+        Swal.fire({
             title: "Super !",
             text: "Votre lien a été copié ans le presse-papiers",
             icon: "success",
             closeOnClickOutside: false,
             })
+        });
+        deleteIdButton.addEventListener('click', () => {
+            Swal.fire({
+                title: "Alert",
+                text: "Vous ne pouvez plus revenir en arrière.",
+                icon: "info",
+                closeOnClickOutside: true,
+                }).then((result)=>{
+                if(result.isConfirmed){
+                const userRef = database.ref(`/utilisateurs`);
+                userRef.child(userId).remove()
+                .then(()=>{
+                Swal.fire({
+                title: 'Supprimé !',
+                text: "Ce compte a été supprimé !",
+                icon: 'success',
+                allowOutsideClick: false,
+                confirmButtonColor: '#3085d6',
+                }).then((result) => {
+                if (result.isConfirmed) {
+                // Désactiver l'utilisateur
+                window.location.href = "index.html"
+                }             
+                })
+                }).catch((error)=>{            
+                Swal.fire({
+                title: 'Supprimé !',
+                text: "Ce compte n'a pas été supprimé !",
+                icon: 'error',
+                allowOutsideClick: false,
+                confirmButtonColor: '#3085d6',
+                }).then((result) => {
+                if (result.isConfirmed) {
+                } 
+                })
+                })    
+                }
+                })
         });
           usernameID.innerHTML = `${username} `
           Solde.innerHTML = `Gains : ${SoldeText} FCFA`
@@ -160,12 +199,23 @@
                 localStorage.setItem("theValeemail", useremail)
                 localStorage.setItem("theValelname", username)
             }else{
-                swal({
+                Swal.fire({
                 title: "Désolé",
                 text: "Vous n'êtes pas abonné",
                 icon: "info",
                 closeOnClickOutside: false,
-                })
+                footer: '<button id="footerButton" style="color: white; background-color: #FFB6C1; border: none; padding: 12px; cursor: pointer; border-radius: 5px;">Voulez-vous vous abonnés ?</button>'
+                });
+                // Sélectionnez le bouton du pied de page
+                const footerButton = document.getElementById('footerButton');
+                
+                // Ajoutez un gestionnaire d'événements clic pour le bouton du pied de page
+                footerButton.addEventListener('click', function() {
+                    // Fermez la boîte de dialogue
+                   // Swal.close();
+                   window.location.href = "abonnement.html"
+                });
+
             }
          } )                  
             // Récupérez les données des produits depuis Firebase

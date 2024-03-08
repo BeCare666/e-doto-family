@@ -33,7 +33,7 @@
                 .then((snapshot) => {
                 if (!snapshot.exists()) {
 
-                }else{
+                }else{  
 
          document.getElementById('priceOfABONNE1w').addEventListener('click', function(){ 
             if(snapshot.val().ABONNEMENT == false){

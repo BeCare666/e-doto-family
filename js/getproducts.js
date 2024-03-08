@@ -123,7 +123,7 @@
           <li  style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"><span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>${useremail}</li>
           <li><span class="icon"><i class="fas fa-handshake" aria-hidden="true"></i></span>${contentwx}</li>
           <li><span class="icon"><a href="./wallet/wallet.html"><i class="fas fa-wallet" aria-hidden="true" style="color: white !important;"></i></span>Retirer vos gains </a></li>
-          <li><span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>Allez à l'accueil</li>
+          <li><span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span><a href="index.html">Allez à l'accueil</a> </li>
           <li><span class="icon"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></span><a href="./auth0/login.html">Deconnecter</a></li>
           <li id="deleteId"><span class="icon"><i class="fas fa-trash" aria-hidden="true"></i></span>Supprimer votre compte</li>
           <li id="affiliateID">

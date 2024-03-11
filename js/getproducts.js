@@ -76,7 +76,12 @@
                             STATUS:true,
                             STATUSAFILIATE:false,
                             SOLDEAFILIATE:0,
-                            GETALLWALLET :"",                     
+                            GETALLWALLET :"",
+                            BILAN: "",
+                            SERVICESABPFPRICE: "",
+                            ID_PAIMENT:"",
+                            ACCESSABPF:false  
+
                             }).then(() => {  
                             Swal.fire({
                             title: "Félicitations",
@@ -117,12 +122,17 @@
           const contentwx = snapshot.val().ABONNEMENT == false
           ? `Aucun abonnement `   
           : `<i class="zmdi zmdi-check-circle" style="font-size: 18px; color: green;"></i> Premium`;
+
+          const contentwabpf = snapshot.val().ACCESSABPF == false
+          ? ``   
+          : `<li><span class="icon"><i class="fas fa-clinic-medical" aria-hidden="true"></i> </span><a href="toaccesabpf.html">Services ABPF</a> </li> `;
           
           ABIDX.innerHTML = `
           <ul>
           <li  style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"><span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>${useremail}</li>
           <li><span class="icon"><i class="fas fa-handshake" aria-hidden="true"></i></span>${contentwx}</li>
           <li><span class="icon"><a href="./wallet/wallet.html"><i class="fas fa-wallet" aria-hidden="true" style="color: white !important;"></i></span>Retirer vos gains </a></li>
+          ${contentwabpf}
           <li><span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span><a href="index.html">Allez à l'accueil</a> </li>
           <li><span class="icon"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></span><a href="./auth0/login.html">Deconnecter</a></li>
           <li id="deleteId"><span class="icon"><i class="fas fa-trash" aria-hidden="true"></i></span>Supprimer votre compte</li>

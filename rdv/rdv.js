@@ -1,11 +1,12 @@
 const TheVale = localStorage.getItem('passIdschedule');
 const TheValelname = localStorage.getItem('theValelname');
 const TheValeemail = localStorage.getItem('theValeemail')
+const unserconnectId = localStorage.getItem('unserconnect')
 if(!TheVale){
   window.location.href =  "../profil.html"
 }
 
-  // Tracking information object
+  // Tracking information object   
   var tracking = {
     utmSource: 'Google',
     utmMedium: 'cpc',
@@ -16,8 +17,10 @@ if(!TheVale){
   var customer = {
     lname: TheValelname,
     email: TheValeemail,
-    a1: '',
+    a1: `Salut cher edoto family, c'est ${TheValelname}. Voici moi lien pour effectuer le bilan : https://edotofamily.netlify.app/admin/bilan/index.html?user-id=${unserconnectId} .Merci !`,
   }
+
+
   // Data object with Team, Event Type, and UTM info
 {/*var linkData = {
   team: 'coffee-shop',
@@ -50,3 +53,4 @@ if(!TheVale){
       textColor: '#ffffff', 
       branding: false
   });
+  

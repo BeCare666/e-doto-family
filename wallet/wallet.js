@@ -121,7 +121,6 @@ const firebaseConfig = {
             //function to get my wallet
             var IdTogetwallet = document.getElementById('idTogetwallet');
             IdTogetwallet.addEventListener('click', function(){
-
                 document.getElementById('preloader').style.display = "block"
                 const UserConnectuserId = localStorage.getItem("unserconnect");
                 const userRef = database.ref(`/utilisateurs/${UserConnectuserId}`);

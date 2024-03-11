@@ -126,7 +126,7 @@
             var useremail = snapshot.val().email;
             var username = snapshot.val().username;
            document.getElementById("scheduleID").addEventListener('click', function(){
-              if(!snapshot.val().ABONNEMENT){
+              if(snapshot.val().ABONNEMENT){
                   window.location.href = "./rdv/rdv.html"
                   var valPassschedule = "MDlEKNDCKKH2345kfgEE" 
                   localStorage.setItem("passIdschedule", valPassschedule)

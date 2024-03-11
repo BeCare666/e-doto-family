@@ -120,6 +120,12 @@
                   }
                  })
                 });
+                addFailedListener(error => {
+                   // console.log(error);
+                   setTimeout(()=>{
+                    window.location.reload();
+              },700)
+                });
             }else{
                 Swal.fire({
                     title: "Oops",

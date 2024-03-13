@@ -44,6 +44,7 @@ const firebaseConfig = {
             icon: 'success',
             title:"Succès",
             allowOutsideClick: false,
+            showConfirmButton: false,
             text : `Vous êtes connecté avec succès !`,
         })
         localStorage.setItem('unserconnect', useruid)

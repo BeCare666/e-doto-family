@@ -105,7 +105,7 @@
                                 })
                           }else{
                             localStorage.removeItem("userafiliateIdC");
-                        setTimeout(()=>{
+                         setTimeout(()=>{
                                 window.location.reload();
                         },700)
                           }

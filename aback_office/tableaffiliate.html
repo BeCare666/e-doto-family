@@ -36,6 +36,8 @@
     * {
       font-family: 'Montserrat-bold', sans-serif;
       font-size: 14px !important;
+      background-color: #1f2029 !important;
+      
     }
   </style>
 </head>
@@ -51,7 +53,7 @@ box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);">
 
         <!-- Sidebar -->
         <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar"
-        style="background-color: #000080 !important;">
+        style="background-color: rgba(21,21,21,.2)!important;">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -100,9 +102,9 @@ box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);">
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" style="background-color:#1f2029 !important;">
                     <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto" >
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1" style="display: none;">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
@@ -312,13 +314,13 @@ box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);">
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="sticky-footer bg-white" style="background-color: #1f2029 !important; color: white;">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <div class="copyright" style="color: #000080;">
+                        <div class="copyright" style="color: white;">
                             &copy; Copyright 2024 edotofamily. All Rights Reserved
                           </div>
-                          <div class="credits" style="color: #000080;">
+                          <div class="credits" style="color: white;">
                             Designed by edotofamily
                           </div>
                     </div>
@@ -357,6 +359,7 @@ box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);">
     </div>
 </section>
     <script>
+           document.getElementById('preloader').style.display ="none"
     const firebaseConfig = {
      apiKey: "AIzaSyBdncSQelmFoSYFShX4SXm8lVrPaWeLGzA",
      authDomain: "e-doto.firebaseapp.com",
